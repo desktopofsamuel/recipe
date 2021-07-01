@@ -28,10 +28,15 @@ const Navigation = () => {
       </Box>
       <Spacer />
       <Box>
-        <Button colorScheme="teal" mr="4" onClick={() => toggleColorMode()}>
+        <Button
+          colorScheme="teal"
+          mr="4"
+          fontWeight="regular"
+          onClick={() => toggleColorMode()}
+        >
           {colorMode}
         </Button>
-        <Button colorScheme="teal" mr="4">
+        <Button colorScheme="teal" mr="4" fontWeight="regular">
           Log in
         </Button>
       </Box>

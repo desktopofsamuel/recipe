@@ -10,7 +10,7 @@ import {
   useColorMode,
   Button,
 } from "@chakra-ui/react";
-import { StarIcon } from "@chakra-ui/icons";
+import { TimeIcon, StarIcon } from "@chakra-ui/icons";
 
 const RecipeCard = ({ data }) => {
   return (
@@ -19,15 +19,16 @@ const RecipeCard = ({ data }) => {
       <Box p="6">
         <Box
           color="gray.500"
-          fontWeight="semibold"
           letterSpacing="wide"
           fontSize="xs"
           textTransform="uppercase"
         >
+          <TimeIcon mr="2" />
           {data.time}
         </Box>
         <Box
           mt="1"
+          fontSize="2xl"
           fontWeight="semibold"
           as="h4"
           lineHeight="tight"

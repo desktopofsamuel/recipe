@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   Box,
   Flex,
@@ -9,6 +10,7 @@ import {
   useColorMode,
   Button,
 } from "@chakra-ui/react";
+import { SunIcon, MoonIcon } from "@chakra-ui/icons";
 
 const Navigation = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -16,7 +18,7 @@ const Navigation = () => {
     <Flex
       pos="absolute"
       top="0"
-      bg="gray.100"
+      bg="blackAlpha.200"
       width="100%"
       h="80px"
       align="center"
@@ -27,19 +29,24 @@ const Navigation = () => {
         </Heading>
       </Box>
       <Spacer />
-      <Box>
+      <HStack>
+        <Heading size="md" color="black">
+          <Link href="/about">
+            <a>About</a>
+          </Link>
+        </Heading>
         <Button
           colorScheme="teal"
           mr="4"
           fontWeight="regular"
-          onClick={() => toggleColorMode()}
+          onClick={toggleColorMode}
         >
-          {colorMode}
+          {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
         </Button>
         <Button colorScheme="teal" mr="4" fontWeight="regular">
           Log in
         </Button>
-      </Box>
+      </HStack>
     </Flex>
   );
 };
